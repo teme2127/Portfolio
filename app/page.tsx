@@ -47,7 +47,7 @@ export default function Home() {
               Contact Me
             </Link>
             <a
-              href="/Temesgen-Sisay-CV.pdf"
+              href="/Temesgen-Sisay-CV-New.pdf"
               className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors underline underline-offset-4"
             >
               Download CV
