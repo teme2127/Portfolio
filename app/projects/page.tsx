@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function ProjectsPage() {
   const projects = [
     {
@@ -10,8 +12,8 @@ export default function ProjectsPage() {
         "IT Support",
         "E-Learning Systems",
         "User Training",
-        "Troubleshooting",
       ],
+      period: "2024 - Present"
     },
     {
       title: "Instructor & Staff Training Program",
@@ -21,9 +23,9 @@ export default function ProjectsPage() {
       skills: [
         "Instructor Training",
         "User Manuals",
-        "Communication",
         "Academic Systems",
       ],
+      period: "2024"
     },
     {
       title: "System Testing & QA Collaboration",
@@ -34,15 +36,16 @@ export default function ProjectsPage() {
         "Requirements Gathering",
         "QA Testing",
         "Bug Reporting",
-        "User Feedback",
       ],
+      period: "2024"
     },
     {
       title: "React CRUD Application",
       role: "Front-End Developer (Junior)",
       description:
         "Built a React CRUD application that fetches data from an API, displays user data, and supports create, update, and delete operations.",
-      skills: ["React", "JavaScript", "API Integration", "UI Design"],
+      skills: ["React", "JavaScript", "API Integration"],
+      period: "2023"
     },
     {
       title: "Hardware & Software Maintenance",
@@ -52,59 +55,72 @@ export default function ProjectsPage() {
       skills: [
         "Hardware Maintenance",
         "Windows OS",
-        "Software Installation",
         "System Optimization",
       ],
+      period: "2023"
     },
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-50 dark:bg-black">
-      <main className="mx-auto max-w-5xl px-6 py-24">
-        <h1 className="text-3xl font-bold text-black dark:text-white">
+    <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
+      <div className="space-y-4">
+        <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl text-gradient">
           Projects & Experience
         </h1>
-
-        <p className="mt-4 max-w-3xl text-zinc-600 dark:text-zinc-400">
+        <p className="max-w-2xl text-lg text-muted-foreground">
           A selection of projects and professional experience demonstrating my
-          skills in system administration, IT support, training, and front-end
-          development.
+          skills in system administration, IT support, training, and development.
         </p>
+      </div>
 
-        {/* PROJECT LIST */}
-        <div className="mt-12 space-y-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="rounded-xl border bg-white p-6 shadow-sm transition hover:shadow-md dark:border-zinc-800 dark:bg-black"
-            >
-              <h2 className="text-xl font-semibold text-black dark:text-white">
-                {project.title}
-              </h2>
-
-              <p className="mt-1 text-sm font-medium text-zinc-500">
-                {project.role}
-              </p>
-
-              <p className="mt-4 text-zinc-600 dark:text-zinc-400">
-                {project.description}
-              </p>
-
-              {/* SKILLS */}
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.skills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="rounded-full bg-zinc-200 px-3 py-1 text-xs text-black dark:bg-zinc-800 dark:text-white"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+      <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-all hover:shadow-md hover:border-primary/50"
+          >
+            <div className="flex justify-between items-start mb-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary/60 bg-primary/5 px-2 py-1 rounded">
+                {project.period}
+              </span>
             </div>
-          ))}
-        </div>
-      </main>
+            
+            <h2 className="text-xl font-bold mb-1 group-hover:text-primary transition-colors">
+              {project.title}
+            </h2>
+
+            <p className="text-sm font-medium text-muted-foreground mb-4">
+              {project.role}
+            </p>
+
+            <p className="text-sm text-muted-foreground flex-grow mb-6 leading-relaxed">
+              {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-4 border-t border-border/50">
+              {project.skills.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full bg-secondary px-3 py-0.5 text-[10px] font-semibold text-secondary-foreground"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-20 text-center">
+        <p className="text-muted-foreground mb-6">Want to see more or discuss a project?</p>
+        <Link
+          href="/contact"
+          className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-8 text-sm font-medium text-primary-foreground transition-all hover:scale-105 active:scale-95"
+        >
+          Get In Touch
+        </Link>
+      </div>
     </div>
   );
 }
+

@@ -1,5 +1,7 @@
 import "./globals.css";
 import { ThemeProvider } from "next-themes";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 export default function RootLayout({
   children,
@@ -8,15 +10,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="min-h-screen flex flex-col antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
         >
-          {children}
+          <Navbar />
+          <main className="flex-grow">
+            {children}
+          </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
   );
 }
+
