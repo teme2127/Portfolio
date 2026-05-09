@@ -9,7 +9,7 @@ export default function Home() {
         <div className="relative group">
           <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-zinc-200 to-zinc-400 opacity-25 blur transition duration-1000 group-hover:opacity-100 group-hover:duration-200 dark:from-zinc-700 dark:to-zinc-900" />
           <Image
-            src="/profile.png"
+            src="/profile.jpg"
             alt="Temesgen Sisay"
             width={180}
             height={180}
