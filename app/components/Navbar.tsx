@@ -15,20 +15,20 @@ export default function Navbar() {
 
   return (
     <header className="glass">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          TSG<span className="text-zinc-500">.</span>
+      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-5">
+        <Link href="/" className="text-2xl font-black tracking-tighter group">
+          TSG<span className="text-primary transition-colors group-hover:text-zinc-400">.</span>
         </Link>
 
-        <div className="flex items-center gap-6">
-          <ul className="hidden items-center gap-6 sm:flex">
+        <div className="flex items-center gap-8">
+          <ul className="hidden items-center gap-8 sm:flex">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
+                  className={`text-sm font-bold uppercase tracking-widest transition-all hover:text-primary ${
                     pathname === link.href
-                      ? "text-primary"
+                      ? "text-primary border-b-2 border-primary"
                       : "text-muted-foreground"
                   }`}
                 >
@@ -37,7 +37,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="h-4 w-px bg-border hidden sm:block" />
+          <div className="h-5 w-px bg-border/60 hidden sm:block" />
           <ThemeToggle />
         </div>
       </nav>
