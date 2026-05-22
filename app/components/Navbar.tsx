@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
-
+  const [menuOpen, setMenuOpen] = useState(false);
 export default function Navbar() {
   const pathname = usePathname();
 
