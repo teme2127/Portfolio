@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
+import { useState } from "react";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -22,7 +23,8 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center gap-6">
-          <ul className="flex items-center gap-6 sm:gap-8">
+          {/* Desktop navigation */}
+          <ul className="hidden sm:flex items-center gap-6 sm:gap-8">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -44,6 +46,41 @@ export default function Navbar() {
               );
             })}
           </ul>
+
+          {/* Mobile menu button */}
+          <button
+            className="sm:hidden text-foreground"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            ☰
+          </button>
+
+          {/* Mobile navigation */}
+          {menuOpen && (
+            <ul className="flex flex-col bg-background/90 backdrop-blur-md absolute top-full left-0 w-full p-4 sm:hidden">
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href;
+                return (
+                  <li key={link.href} className="mb-2">
+                    <Link
+                      href={link.href}
+                      className={`font-mono text-sm font-bold uppercase tracking-widest transition-all py-2 px-2 flex items-center gap-1 ${
+                        isActive
+                          ? "text-cyan-600 dark:text-cyan-400"
+                          : "text-muted-foreground hover:text-foreground"
+                      }`}
+                    >
+                      {isActive && (
+                        <span className="text-cyan-600 dark:text-cyan-400 select-none text-[10px]">~/</span>
+                      )}
+                      {link.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
           <div className="h-5 w-px bg-border/40 hidden sm:block" />
           <ThemeToggle />
         </div>
