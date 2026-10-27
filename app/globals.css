@@ -39,48 +39,54 @@
 
 @layer base {
   :root {
-    --background: hsl(0 0% 100%);
-    --foreground: hsl(222.2 84% 4.9%);
-    --card: hsl(0 0% 100%);
-    --card-foreground: hsl(222.2 84% 4.9%);
-    --popover: hsl(0 0% 100%);
-    --popover-foreground: hsl(222.2 84% 4.9%);
-    --primary: hsl(221.2 83.2% 53.3%);
-    --primary-foreground: hsl(210 40% 98%);
-    --secondary: hsl(210 40% 96.1%);
-    --secondary-foreground: hsl(222.2 47.4% 11.2%);
-    --muted: hsl(210 40% 96.1%);
-    --muted-foreground: hsl(215.4 16.3% 46.9%);
-    --accent: hsl(210 40% 96.1%);
-    --accent-foreground: hsl(222.2 47.4% 11.2%);
-    --destructive: hsl(0 84.2% 60.2%);
-    --destructive-foreground: hsl(210 40% 98%);
-    --border: hsl(214.3 31.8% 91.4%);
-    --input: hsl(214.3 31.8% 91.4%);
-    --ring: hsl(221.2 83.2% 53.3%);
+    --background: #f6f8fc;
+    --foreground: #172033;
+    --card: #ffffff;
+    --card-foreground: #172033;
+    --popover: #ffffff;
+    --popover-foreground: #172033;
+    --primary: #1d4ed8;
+    --primary-foreground: #ffffff;
+    --secondary: #eaf0f8;
+    --secondary-foreground: #334155;
+    --muted: #eaf0f8;
+    --muted-foreground: #475569;
+    --accent: #e8f0ff;
+    --accent-foreground: #1d4ed8;
+    --destructive: #b91c1c;
+    --destructive-foreground: #ffffff;
+    --border: #d7e0ec;
+    --input: #d7e0ec;
+    --ring: #2563eb;
     --radius: 1rem;
+    --highlight-start: #1d4ed8;
+    --highlight-end: #0f766e;
+    --surface-shadow: 0 8px 28px rgb(30 58 95 / 0.06);
   }
 
   .dark {
-    --background: hsl(224 71% 4%);
-    --foreground: hsl(210 40% 98%);
-    --card: hsl(224 71% 4%);
-    --card-foreground: hsl(210 40% 98%);
-    --popover: hsl(224 71% 4%);
-    --popover-foreground: hsl(210 40% 98%);
-    --primary: hsl(210 40% 98%);
-    --primary-foreground: hsl(222.2 47.4% 11.2%);
-    --secondary: hsl(217.2 32.6% 17.5%);
-    --secondary-foreground: hsl(210 40% 98%);
-    --muted: hsl(217.2 32.6% 17.5%);
-    --muted-foreground: hsl(215 20.2% 65.1%);
-    --accent: hsl(217.2 32.6% 17.5%);
-    --accent-foreground: hsl(210 40% 98%);
-    --destructive: hsl(0 62.8% 30.6%);
-    --destructive-foreground: hsl(210 40% 98%);
-    --border: hsl(217.2 32.6% 17.5%);
-    --input: hsl(217.2 32.6% 17.5%);
-    --ring: hsl(224.3 76.3% 48%);
+    --background: #111827;
+    --foreground: #f1f5f9;
+    --card: #1e293b;
+    --card-foreground: #f1f5f9;
+    --popover: #1e293b;
+    --popover-foreground: #f1f5f9;
+    --primary: #93c5fd;
+    --primary-foreground: #111827;
+    --secondary: #28364a;
+    --secondary-foreground: #e2e8f0;
+    --muted: #28364a;
+    --muted-foreground: #cbd5e1;
+    --accent: #253858;
+    --accent-foreground: #bfdbfe;
+    --destructive: #fca5a5;
+    --destructive-foreground: #111827;
+    --border: #41516a;
+    --input: #41516a;
+    --ring: #93c5fd;
+    --highlight-start: #93c5fd;
+    --highlight-end: #5eead4;
+    --surface-shadow: 0 8px 28px rgb(0 0 0 / 0.14);
   }
 }
 
@@ -94,7 +100,7 @@
   }
 }
 
-/* Custom Cyberpunk Utilities */
+/* Subtle background and surface utilities */
 .cyber-grid {
   background-image: 
     linear-gradient(rgba(120, 120, 120, 0.05) 1px, transparent 1px),
@@ -111,27 +117,26 @@
 }
 
 .neon-text {
-  background-image: linear-gradient(to right, #06b6d4, #a855f7, #ec4899);
+  background-image: linear-gradient(to right, var(--highlight-start), var(--highlight-end));
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
 }
 
 .glass {
   border-width: 1px;
-  border-color: color-mix(in srgb, var(--foreground) 10%, transparent);
-  background-color: color-mix(in srgb, var(--background) 20%, transparent);
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  border-color: var(--border);
+  background-color: color-mix(in srgb, var(--card) 94%, transparent);
+  box-shadow: var(--surface-shadow);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
 }
 
 .glass-dark {
   border-width: 1px;
-  border-color: color-mix(in srgb, var(--foreground) 5%, transparent);
-  background-color: color-mix(in srgb, var(--foreground) 3%, transparent);
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  border-color: var(--border);
+  background-color: var(--card);
+  box-shadow: var(--surface-shadow);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
 }
@@ -202,4 +207,15 @@
 
 .animate-scale-in {
   animation: scaleIn 0.4s ease-out forwards;
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--ring);
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: var(--primary);
+    color: var(--primary-foreground);
+  }
 }

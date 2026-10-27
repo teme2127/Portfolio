@@ -29,12 +29,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-      <body className={`${outfit.variable} ${jetbrainsMono.variable} font-sans min-h-screen flex flex-col antialiased relative selection:bg-blue-500/30 selection:text-blue-200 dark:selection:bg-cyan-500/20`}>
+      <body className={`${outfit.variable} ${jetbrainsMono.variable} font-sans min-h-screen flex flex-col antialiased relative`}>
         {/* Background Visual Effects */}
         <div className="absolute inset-0 -z-50 overflow-hidden pointer-events-none bg-background">
           {/* Animated Neon Light Blobs */}
-          <div className="absolute top-[20%] left-[-10%] w-96 h-96 bg-blue-600/10 dark:bg-cyan-500/5 rounded-full blur-[120px] animate-drift pointer-events-none" />
-          <div className="absolute bottom-[20%] right-[-10%] w-96 h-96 bg-purple-600/10 dark:bg-purple-500/5 rounded-full blur-[120px] animate-drift-slow pointer-events-none" style={{ animationDelay: "-8s" }} />
+          <div className="absolute top-[20%] left-[-10%] w-96 h-96 bg-blue-600/10 dark:bg-blue-500/5 rounded-full blur-[120px] animate-drift pointer-events-none" />
+          <div className="absolute bottom-[20%] right-[-10%] w-96 h-96 bg-teal-600/10 dark:bg-teal-500/5 rounded-full blur-[120px] animate-drift-slow pointer-events-none" style={{ animationDelay: "-8s" }} />
           
           {/* Cyber Grid Mask */}
           <div className="absolute inset-0 cyber-grid opacity-20 dark:opacity-30" />
@@ -45,8 +45,8 @@ export default function RootLayout({
 
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
+          defaultTheme="system"
+          enableSystem
         >
           <Navbar />
           <main className="flex-grow relative z-10">

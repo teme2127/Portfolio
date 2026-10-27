@@ -10,13 +10,13 @@ export function Resume() {
   return (
     <article className="glass-dark rounded-2xl border border-border p-6 sm:p-10">
       <header className="space-y-3 border-b border-border pb-6">
-        <p className="font-mono text-xs uppercase tracking-widest text-cyan-600 dark:text-cyan-400">Resume</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-primary">Resume</p>
         <h1 className="text-3xl font-bold sm:text-4xl">Temesgen Sisay</h1>
         <p className="text-lg text-muted-foreground">System Administrator &amp; IT Specialist</p>
         <p className="text-sm text-muted-foreground">Adama, Ethiopia</p>
         <div className="flex flex-wrap gap-4 text-sm">
-          <a href="mailto:temesgensisay16@gmail.com" className="break-all text-cyan-700 hover:underline dark:text-cyan-400">temesgensisay16@gmail.com</a>
-          <a href="tel:+251941832246" className="text-cyan-700 hover:underline dark:text-cyan-400">+251 941832246</a>
+          <a href="mailto:temesgensisay16@gmail.com" className="break-all text-primary hover:underline">temesgensisay16@gmail.com</a>
+          <a href="tel:+251941832246" className="text-primary hover:underline">+251 941832246</a>
         </div>
       </header>
 
@@ -46,13 +46,13 @@ export function Resume() {
           <li>Requirements gathering, bug reporting, and system testing with developers.</li>
           <li>React CRUD application development and hardware/software maintenance.</li>
         </ul>
-        <Link href="/projects" className="inline-block text-cyan-700 hover:underline dark:text-cyan-400">View project details</Link>
+        <Link href="/projects" className="inline-block text-primary hover:underline">View project details</Link>
       </section>
 
       <footer className="mt-8 flex flex-wrap gap-4 border-t border-border pt-6 text-sm">
-        <a href="https://github.com/teme2127" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline dark:text-cyan-400">GitHub</a>
-        <a href="https://linkedin.com/in/temesgen-sisay-m21m27" target="_blank" rel="noopener noreferrer" className="text-cyan-700 hover:underline dark:text-cyan-400">LinkedIn</a>
-        <a href="/Temesgen-Sisay-CV-New.pdf" download className="text-cyan-700 hover:underline dark:text-cyan-400">Download CV</a>
+        <a href="https://github.com/teme2127" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">GitHub</a>
+        <a href="https://linkedin.com/in/temesgen-sisay-m21m27" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">LinkedIn</a>
+        <a href="/Temesgen-Sisay-CV-New.pdf" download className="text-primary hover:underline">Download CV</a>
       </footer>
     </article>
   );

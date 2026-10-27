@@ -78,13 +78,13 @@ export default function ProjectsPage() {
     <div className="mx-auto max-w-5xl px-6 py-16 sm:py-24 relative">
       {/* Page Header */}
       <div className="space-y-4 mb-20 border-b border-foreground/10 pb-8">
-        <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground/60">
-          <span className="text-cyan-600 dark:text-cyan-400">~/</span>workspace/projects_dir
+        <div className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
+          <span className="text-primary">~/</span>workspace/projects_dir
         </div>
         <h1 className="text-4xl font-black tracking-tight sm:text-6xl text-foreground uppercase">
           PROJECTS & <span className="neon-text">IMPACT</span>
         </h1>
-        <p className="max-w-2xl font-mono text-xs text-muted-foreground/50">
+        <p className="max-w-2xl font-mono text-xs text-muted-foreground">
           &gt; ls -la --color=always
           <br />
           Displaying professional missions, system architectures, and engineering operations.
@@ -98,49 +98,49 @@ export default function ProjectsPage() {
           return (
             <div
               key={index}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-foreground/[0.01] dark:bg-foreground/[0.01] p-8 shadow-sm transition-all duration-500 hover:border-cyan-500/30 hover:bg-cyan-500/[0.01] glass-dark"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-border bg-foreground/[0.01] dark:bg-foreground/[0.01] p-8 shadow-sm transition-all duration-500 hover:border-blue-500/30 hover:bg-blue-500/[0.01] glass-dark"
             >
               {/* Corner Ambient Glow */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               <div>
                 {/* Header elements inside card */}
                 <div className="flex justify-between items-start mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-foreground/5 flex items-center justify-center text-cyan-600 dark:text-cyan-400 group-hover:scale-115 transition-transform duration-500 shadow-sm border border-white/5">
+                  <div className="w-12 h-12 rounded-xl bg-foreground/5 flex items-center justify-center text-primary group-hover:scale-115 transition-transform duration-500 shadow-sm border border-border">
                     {project.icon}
                   </div>
-                  <span className="font-mono text-[10px] tracking-widest text-muted-foreground/40 bg-foreground/5 px-2.5 py-1 rounded-md border border-white/5">
+                  <span className="font-mono text-[10px] tracking-widest text-muted-foreground bg-foreground/5 px-2.5 py-1 rounded-md border border-border">
                     {project.period}
                   </span>
                 </div>
 
                 {/* Info titles */}
-                <h2 className="text-2xl font-bold mb-2 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 transition-colors leading-tight tracking-tight">
+                <h2 className="text-2xl font-bold mb-2 group-hover:text-primary transition-colors leading-tight tracking-tight">
                   {project.title}
                 </h2>
 
-                <p className="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400 mb-4 uppercase tracking-wider">
+                <p className="text-[10px] font-mono font-bold text-teal-700 dark:text-teal-300 mb-4 uppercase tracking-wider">
                   {"// "}{project.role}
                 </p>
 
-                <p className="text-muted-foreground/80 leading-relaxed text-sm mb-8">
+                <p className="text-muted-foreground leading-relaxed text-sm mb-8">
                   {project.description}
                 </p>
               </div>
 
               {/* Technologies as Comment tags */}
-              <div className="flex flex-wrap gap-x-4 gap-y-1.5 pt-6 border-t border-white/5 font-mono text-[11px] text-muted-foreground/45">
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 pt-6 border-t border-border font-mono text-[11px] text-muted-foreground">
                 {project.skills.map((skill) => (
-                  <span key={skill} className="hover:text-cyan-400 transition-colors">
+                  <span key={skill} className="hover:text-primary transition-colors">
                     {"// "}{skill}
                   </span>
                 ))}
               </div>
 
               {/* INTERACTIVE MOCK SHELL HOVER OVERLAY */}
-              <div className="absolute inset-0 bg-background/98 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 flex flex-col font-mono text-xs text-muted-foreground/90 justify-between pointer-events-none group-hover:pointer-events-auto border border-cyan-500/20 rounded-2xl z-20">
+              <div className="absolute inset-0 bg-background/98 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 p-6 flex flex-col font-mono text-xs text-muted-foreground justify-between pointer-events-none group-hover:pointer-events-auto border border-blue-500/20 rounded-2xl z-20">
                 <div className="space-y-2.5">
-                  <div className="flex items-center justify-between border-b border-white/5 pb-2 mb-2">
+                  <div className="flex items-center justify-between border-b border-border pb-2 mb-2">
                     <div className="flex gap-1.5">
                       <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                       <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -148,15 +148,15 @@ export default function ProjectsPage() {
                     </div>
                     <span className="text-[9px] opacity-35 tracking-wider font-mono">{scriptName}</span>
                   </div>
-                  <p><span className="text-cyan-600 dark:text-cyan-400">guest@tsg:~$</span> ./{scriptName}</p>
-                  <p className="text-green-500/80 font-semibold">[INFO] Initializing system stack...</p>
-                  <p className="text-cyan-500/80">[INFO] Authenticating role: {project.role}</p>
-                  <p className="text-purple-400/90">[OK] Compiling dependency: {project.skills[0]}</p>
-                  <p className="text-green-400 font-semibold">[SUCCESS] Sandbox initialized at port :8080</p>
+                  <p><span className="text-primary">guest@tsg:~$</span> ./{scriptName}</p>
+                  <p className="text-emerald-700 dark:text-emerald-300 font-semibold">[INFO] Initializing system stack...</p>
+                  <p className="text-primary">[INFO] Authenticating role: {project.role}</p>
+                  <p className="text-teal-700 dark:text-teal-300">[OK] Compiling dependency: {project.skills[0]}</p>
+                  <p className="text-emerald-700 dark:text-emerald-300 font-semibold">[SUCCESS] Sandbox initialized at port :8080</p>
                 </div>
-                <div className="flex justify-between items-center border-t border-white/5 pt-2 mt-2">
-                  <span className="text-[10px] text-cyan-500 dark:text-cyan-400 font-bold uppercase tracking-widest">STATUS: SYSTEM_ACTIVE</span>
-                  <span className="animate-blink text-cyan-600 dark:text-cyan-400 text-sm font-black font-mono">_</span>
+                <div className="flex justify-between items-center border-t border-border pt-2 mt-2">
+                  <span className="text-[10px] text-primary font-bold uppercase tracking-widest">STATUS: SYSTEM_ACTIVE</span>
+                  <span className="animate-blink text-primary text-sm font-black font-mono">_</span>
                 </div>
               </div>
             </div>
@@ -165,30 +165,30 @@ export default function ProjectsPage() {
       </div>
 
       {/* Let's build together Section */}
-      <div className="mt-32 glass-dark border border-white/10 rounded-2xl overflow-hidden group">
+      <div className="mt-32 glass-dark border border-border rounded-2xl overflow-hidden group">
         {/* Window Header */}
-        <div className="bg-foreground/5 px-5 py-3 border-b border-white/5 flex items-center justify-between">
+        <div className="bg-foreground/5 px-5 py-3 border-b border-border flex items-center justify-between">
           <div className="flex gap-2">
             <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
             <div className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
           </div>
-          <span className="font-mono text-[10px] text-muted-foreground/40 uppercase tracking-widest">sys_connect.exe</span>
+          <span className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">sys_connect.exe</span>
         </div>
 
         <div className="p-12 text-center relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-teal-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
           
           <h3 className="text-2xl sm:text-3xl font-black mb-4 uppercase tracking-tight">
             Let&apos;s build <span className="neon-text">something premium</span>
           </h3>
-          <p className="text-muted-foreground/70 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+          <p className="text-muted-foreground mb-8 max-w-md mx-auto text-sm leading-relaxed">
             Have a project in mind or need deep system administration and web expertise? I&apos;m ready to establish connection.
           </p>
 
           <Link
             href="/contact"
-            className="group inline-flex h-12 items-center justify-center rounded-xl bg-cyan-600 dark:bg-cyan-500 hover:bg-cyan-700 hover:dark:bg-cyan-600 px-8 text-xs font-bold text-white transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-cyan-500/10 font-mono tracking-wider"
+            className="group inline-flex h-12 items-center justify-center rounded-xl bg-blue-700 dark:bg-blue-700 hover:bg-blue-800 dark:hover:bg-blue-800 px-8 text-xs font-bold text-white transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-blue-500/10 font-mono tracking-wider"
           >
             ESTABLISH CONNECTION
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="ml-2 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

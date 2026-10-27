@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-5xl px-6 py-10">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest text-center sm:text-left">
-            © {new Date().getFullYear()} Temesgen Sisay <span className="text-purple-500">•</span> Crafted with Precision
+            © {new Date().getFullYear()} Temesgen Sisay <span className="text-teal-700 dark:text-teal-300">•</span> Crafted with Precision
           </p>
           <div className="flex gap-6 font-mono text-[10px] uppercase tracking-widest">
             <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
