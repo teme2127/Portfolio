@@ -3,17 +3,22 @@ import { ThemeProvider } from "next-themes";
 import { JetBrains_Mono, Outfit } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Head from "next/head";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Temesgen Sisay | System Administrator & IT Specialist",
+  description: "Temesgen Sisay's portfolio: system administration, IT support, and web development in Adama, Ethiopia.",
+};
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains-mono",
   weight: ["400", "500", "700", "800"],
 });
 
 const outfit = Outfit({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-outfit",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
@@ -24,7 +29,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="scroll-smooth">
-    <Head><meta name="viewport" content="width=device-width, initial-scale=1" /></Head>
       <body className={`${outfit.variable} ${jetbrainsMono.variable} font-sans min-h-screen flex flex-col antialiased relative selection:bg-blue-500/30 selection:text-blue-200 dark:selection:bg-cyan-500/20`}>
         {/* Background Visual Effects */}
         <div className="absolute inset-0 -z-50 overflow-hidden pointer-events-none bg-background">

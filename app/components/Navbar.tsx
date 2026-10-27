@@ -4,14 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 import { useState } from "react";
-  const [menuOpen, setMenuOpen] = useState(false);
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
 
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Projects", href: "/projects" },
     { name: "Contact", href: "/contact" },
+    { name: "Resume", href: "/curriculo" },
   ];
 
   return (
@@ -50,7 +51,10 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             className="sm:hidden text-foreground"
-            onClick={() => setMenuOpen(!menuOpen)}
+            type="button"
+            onClick={() => setMenuOpen((open) => !open)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
             aria-label="Toggle menu"
           >
             ☰
@@ -58,13 +62,14 @@ export default function Navbar() {
 
           {/* Mobile navigation */}
           {menuOpen && (
-            <ul className="flex flex-col bg-background/90 backdrop-blur-md absolute top-full left-0 w-full p-4 sm:hidden">
+            <ul id="mobile-navigation" className="flex flex-col bg-background/90 backdrop-blur-md absolute top-full left-0 w-full p-4 sm:hidden">
               {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
                   <li key={link.href} className="mb-2">
                     <Link
                       href={link.href}
+                      onClick={() => setMenuOpen(false)}
                       className={`font-mono text-sm font-bold uppercase tracking-widest transition-all py-2 px-2 flex items-center gap-1 ${
                         isActive
                           ? "text-cyan-600 dark:text-cyan-400"

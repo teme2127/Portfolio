@@ -1,9 +1,9 @@
 import React from 'react';
-import { Resume } from '@/components/Resume';
+import { Resume } from '@/app/components/Resume';
 
 export default function CurriculoPage() {
   return (
-    <section className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <section className="mx-auto max-w-5xl px-6 py-16 sm:py-24">
       <Resume />
     </section>
   );

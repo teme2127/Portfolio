@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-@theme {
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --font-sans: var(--font-outfit);
+  --font-mono: var(--font-jetbrains-mono);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -116,8 +120,8 @@
 
 .glass {
   border-width: 1px;
-  border-color: hsl(var(--foreground) / 0.1);
-  background-color: hsl(var(--background) / 0.2);
+  border-color: color-mix(in srgb, var(--foreground) 10%, transparent);
+  background-color: color-mix(in srgb, var(--background) 20%, transparent);
   box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
@@ -125,8 +129,8 @@
 
 .glass-dark {
   border-width: 1px;
-  border-color: hsl(var(--foreground) / 0.05);
-  background-color: hsl(var(--foreground) / 0.03);
+  border-color: color-mix(in srgb, var(--foreground) 5%, transparent);
+  background-color: color-mix(in srgb, var(--foreground) 3%, transparent);
   box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);

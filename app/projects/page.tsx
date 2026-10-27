@@ -120,7 +120,7 @@ export default function ProjectsPage() {
                 </h2>
 
                 <p className="text-[10px] font-mono font-bold text-purple-600 dark:text-purple-400 mb-4 uppercase tracking-wider">
-                  // {project.role}
+                  {"// "}{project.role}
                 </p>
 
                 <p className="text-muted-foreground/80 leading-relaxed text-sm mb-8">
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
               <div className="flex flex-wrap gap-x-4 gap-y-1.5 pt-6 border-t border-white/5 font-mono text-[11px] text-muted-foreground/45">
                 {project.skills.map((skill) => (
                   <span key={skill} className="hover:text-cyan-400 transition-colors">
-                    // {skill}
+                    {"// "}{skill}
                   </span>
                 ))}
               </div>

@@ -148,7 +148,7 @@ export default function Home() {
                   {group.icon}
                 </div>
                 <span className="font-mono text-[9px] text-foreground/30 uppercase tracking-widest border border-white/5 px-2 py-0.5 rounded-full">
-                  //{group.category}
+                  {"//"}{group.category}
                 </span>
               </div>
               
